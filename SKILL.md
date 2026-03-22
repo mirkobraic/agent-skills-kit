@@ -1,34 +1,57 @@
 ---
-name: iptc-metadata-skill
-description: Expert guidance on the IPTC Photo Metadata Standard (Core 1.5 and Extension 1.9), including property definitions, XMP/IIM/JSON mappings, TechReference usage, controlled vocabularies, rights and licensing metadata, accessibility guidance, and AI-generated image metadata (Digital Source Type and AI fields). Use when tasks mention IPTC Photo Metadata, IPTC Core/Extension, XMP/IPTC metadata, embedding photo metadata, IPTC fields, TechReference, or when mapping or validating photo metadata properties.
+name: ios-image-metadata-skill
+description: Expert guidance on reading, writing, and preserving image metadata on iOS/macOS using Apple's ImageIO framework. Covers all metadata standards (EXIF, XMP, IPTC, GPS, TIFF, ICC), format-specific properties, auxiliary data (depth maps, HDR gain maps, portrait mattes, spatial photos), and manufacturer MakerNotes. Use when tasks involve image metadata, photo properties, EXIF data, XMP tags, IPTC fields, GPS coordinates in images, ICC color profiles, CGImageSource, CGImageDestination, CGImageMetadata, or any ImageIO framework usage.
 ---
 
-# IPTC Photo Metadata Skill
+# iOS Image Metadata Skill
 
 ## Workflow
 
-1. Clarify the goal: authoring metadata, mapping fields to XMP/IIM/JSON, validating existing metadata, or answering field definitions.
-2. Identify the schema: Core (IIM heritage, backward compatible) or Extension (newer, more granular, includes PLUS rights).
-3. For property definitions, data types, cardinality, and mappings, consult the TechReference JSON or YAML listed in `references/standard-overview.md` (use the cached copies in `references/` when offline).
-4. For best-practice guidance (minimal fields, AI guidance, accessibility fields, preservation), consult `references/user-guide.md`.
-5. When a property is controlled by a vocabulary, return the identifier URI, not just the label.
+1. Identify the metadata domain: which standard (EXIF, XMP, IPTC, GPS, TIFF, ICC), which format, or which ImageIO API.
+2. Consult the appropriate reference in `references/`:
+   - **ImageIO framework** → `references/imageio/` (APIs, supported formats, all property keys, auxiliary data, pitfalls)
+   - **EXIF** → `references/exif/` (camera settings, exposure, timestamps, lens)
+   - **XMP** → `references/xmp/` (namespaces, value types, embedding locations)
+   - **IPTC** → `references/iptc/` (editorial metadata, Core vs Extension, IIM vs XMP)
+   - **GPS** → `references/gps/` (coordinates, direction, speed, altitude)
+   - **TIFF** → `references/tiff/` (make/model, orientation, artist, copyright)
+   - **ICC** → `references/icc/` (color profiles, color models)
+   - **Format-specific** → `references/formats/` (JPEG, PNG, GIF, HEIF, DNG, WebP, etc.)
+   - **MakerNotes** → `references/makers/` (Apple, Canon, Nikon, etc.)
+   - **Cross-standard sync** → `references/interoperability/` (MWG rules, field mapping)
+3. For property key lookups, `references/imageio/property-keys.md` has the complete list of every `kCGImageProperty*` constant.
+4. For format support questions, `references/imageio/supported-formats.md` has the full matrix.
+
+## Key Concepts
+
+**Two metadata APIs in ImageIO:**
+- **Property dictionaries** (`CGImageSourceCopyPropertiesAtIndex`) — flat key–value for standard fields (EXIF, GPS, TIFF, IPTC). See `references/imageio/cgimagesource.md`.
+- **XMP metadata tree** (`CGImageSourceCopyMetadataAtIndex`) — structured access to any XMP namespace. See `references/imageio/cgimage-metadata.md`.
+
+**Format determines which standards are available:**
+- JPEG and TIFF support everything (EXIF + XMP + IPTC IIM + ICC + GPS).
+- HEIF/HEIC supports EXIF + XMP + ICC (no IPTC IIM).
+- PNG, WebP, AVIF support XMP + ICC only.
+- IPTC IIM is JPEG/TIFF only — use XMP namespaces (`Iptc4xmpCore`, `Iptc4xmpExt`) for modern formats.
 
 ## Tools
 
-- Use `scripts/iptc_metadata.py` to read, write, or validate IPTC/XMP metadata via the ExifTool CLI.
-- If you plan to run `scripts/iptc_metadata.py`, first read `references/tooling.md` for full usage, tag naming, and validation guidance.
+- `scripts/iptc_metadata.py` — read, write, or validate IPTC/XMP metadata via ExifTool CLI. See `references/iptc/tooling.md` for usage.
 
-## Response guidance
+## Response Guidance
 
-- Use the exact property names and schema names from the IPTC standard.
-- Provide the XMP prefix and property name when mapping to XMP (for example, `Iptc4xmpExt:DigitalSourceType`).
-- When using ExifTool tags, use group prefixes like `XMP-iptcExt:` (see `references/tooling.md` for the namespace mapping).
-- If a field exists in both IIM and XMP, mention both mappings; if it is Extension-only, state that it is XMP-only.
-- For ambiguous or legacy fields, call out the preferred modern field and explain the mapping.
-- Remind that metadata should be embedded in the image file and preserved through workflows.
+- Use exact Apple API names (`kCGImagePropertyExifDateTimeOriginal`, not "EXIF date").
+- When referencing property keys, include the dictionary they belong to.
+- For GPS coordinates, always note the absolute-value + reference-letter convention (not signed decimals).
+- For EXIF timestamps, mention `OffsetTimeOriginal` for timezone awareness.
+- For IPTC, provide both IIM and XMP mappings when both exist; note Extension fields are XMP-only.
+- Warn about metadata loss through `UIImage` — always recommend `CGImageSource`/`CGImageDestination`.
+- For metadata writing, note whether lossless update is possible (JPEG/PNG/TIFF/PSD yes, HEIC no).
 
 ## References
 
-- `references/standard-overview.md` for schema overview, spec table structure, data types, TechReference links, and XMP namespaces.
-- `references/standard-overview.md` also explains Core vs Extension differences and how XMP is used (embedded vs sidecar, Core mappings vs Extension-only).
-- `references/user-guide.md` for practical usage guidance, minimal set, AI metadata, Digital Source Type, controlled vocabularies, and accessibility fields.
+- `references/imageio/` — ImageIO framework (complete API surface, all property keys, formats, pitfalls)
+- `references/iptc/standard-overview.md` — IPTC schema overview, Core vs Extension, XMP namespaces
+- `references/iptc/user-guide.md` — Practical IPTC usage, minimal fields, AI metadata, accessibility
+- `references/iptc/tooling.md` — ExifTool CLI wrapper and tag naming
+- See `PLAN.md` for the full roadmap and folder contents.
