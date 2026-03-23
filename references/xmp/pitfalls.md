@@ -157,12 +157,14 @@ When these fall out of sync, consumers see conflicting metadata.
 
 The MWG established priority guidelines (2008, updated 2010):
 
-**Reading priority:**
-1. If EXIF and IIM conflict: prefer EXIF when the IIM checksum matches or is
-   absent; prefer IIM when the checksum does not match
-2. If XMP and IIM conflict: prefer XMP (it is the more expressive format)
-3. If XMP and EXIF conflict: prefer the most recently modified value (check
-   `xmp:ModifyDate` vs EXIF `DateTime`)
+**Reading priority (per property group):**
+1. XMP is the authoritative source when the `photoshop:LegacyIPTCDigest`
+   matches or is absent (IIM has not been independently modified)
+2. If the digest mismatches (IIM was edited by a non-MWG-aware tool), IIM
+   values take priority for the affected fields
+3. EXIF values are used as fallback when neither XMP nor IIM contains a
+   given property. The algorithm is property-group-specific (Description,
+   Creator, Date Created, etc.), not a single universal rule
 
 **Writing rule:** When updating a field, write to **all three** locations
 (EXIF, IIM, XMP) to maintain sync. This is called "synchronized writing."

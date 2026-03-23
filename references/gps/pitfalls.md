@@ -347,7 +347,7 @@ for code examples of all stripping methods.
 The ImageIO constant for the GPS differential correction tag is misspelled:
 
 ```swift
-kCGImagePropertyGPSDifferental  // Missing 'i' -- "Diferental" not "Differential"
+kCGImagePropertyGPSDifferental  // Missing 'i' -- "Differental" not "Differential"
 ```
 
 This is a known Apple SDK bug preserved for backward compatibility. Using

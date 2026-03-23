@@ -447,7 +447,7 @@ HEIF Container (ISOBMFF):
 
 ### PNG
 
-PNG 1.5+ introduced the `eXIf` chunk, which contains a raw EXIF block
+The PNG Extensions specification (2017) introduced the `eXIf` chunk, which contains a raw EXIF block
 (TIFF header + IFDs) without the `"Exif\0\0"` preamble. Before this, PNG
 had no standard EXIF support (only XMP via iTXt chunks).
 

@@ -128,7 +128,7 @@ B&W filter/toning is determined by the Saturation value.
 | 0x104d (4173) | ColorChromeEffect | int32s | `0` = Off, `32` = Weak, `64` = Strong |
 | 0x104e (4174) | ColorChromeFxBlue | int32s | `0` = Off, `32` = Weak, `64` = Strong |
 | 0x104f (4175) | GrainEffectSize | int32s | `0` = Off, `16` = Small, `32` = Large |
-| 0x1050 (4176) | ClarityControl | int32s | Clarity adjustment value (-5 to +5 range) |
+| 0x100F (4111) | ClarityControl | int32s | Clarity adjustment value (-5 to +5 range) |
 
 ### Fujifilm Recipe Reconstruction
 
@@ -146,7 +146,7 @@ data, read these tags together:
 9. **ColorChromeFxBlue** (0x104e) -- color chrome blue intensity
 10. **WhiteBalance** (0x1002) + **WhiteBalanceFineTune** (0x100a) -- WB
 11. **DynamicRange** (0x1400) -- DR mode
-12. **ClarityControl** (0x1050) -- clarity
+12. **ClarityControl** (0x100F) -- clarity
 
 This is the foundation for Fujifilm recipe-sharing communities (e.g.,
 FujiXWeekly) that share complete camera settings as "film simulation

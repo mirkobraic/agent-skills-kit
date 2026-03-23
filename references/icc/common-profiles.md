@@ -292,7 +292,7 @@ Same primaries, different transfer functions:
 
 | | sRGB | Rec. 709 |
 |--|------|----------|
-| OETF | Piece-wise (~1/2.2) | BT.709 piece-wise (~1/2.0) |
+| OETF | Piece-wise (~1/2.2) | BT.709 piece-wise (~1/2.2) |
 | Reference EOTF | Piece-wise (~2.2) | BT.1886 (2.4 pure gamma) |
 | Linear threshold | 0.0031308 | 0.018 |
 | Viewing conditions | Office/desktop (bright surround) | Dim surround (TV viewing) |

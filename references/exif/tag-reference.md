@@ -77,7 +77,7 @@ Common combined values:
 | 24 | 0x18 | Flash did not fire, auto mode |
 | 25 | 0x19 | Flash fired, auto mode |
 | 65 | 0x41 | Flash fired, red-eye reduction |
-| 73 | 0x49 | Flash fired, red-eye reduction, return not detected |
+| 73 | 0x49 | Flash fired, compulsory flash, red-eye reduction |
 | 89 | 0x59 | Flash fired, auto, red-eye reduction |
 
 ---

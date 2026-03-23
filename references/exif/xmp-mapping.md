@@ -15,7 +15,7 @@ functions, auto-synthesis), see [`imageio-mapping.md`](imageio-mapping.md).
 |---------------|--------|-------|
 | `http://ns.adobe.com/exif/1.0/` | `exif` | Core Exif IFD tags (pre-2.3) |
 | `http://ns.adobe.com/exif/1.0/aux/` | `aux` | Auxiliary lens/camera data (Adobe origin) |
-| `http://cipa.jp/exif/1.0/` | `exifEX` | EXIF 2.31+ extension tags (CIPA) |
+| `http://cipa.jp/exif/1.0/` | `exifEX` | EXIF 2.3+ extension tags (CIPA) |
 | `http://ns.adobe.com/tiff/1.0/` | `tiff` | IFD0 tags (Make, Model, Orientation, etc.) |
 
 ---
@@ -30,12 +30,12 @@ functions, auto-synthesis), see [`imageio-mapping.md`](imageio-mapping.md).
 | SpectralSensitivity | 0x8824 | `exif:SpectralSensitivity` | Text |
 | ISOSpeedRatings | 0x8827 | `exif:ISOSpeedRatings` | Seq Integer |
 | OECF | 0x8828 | `exif:OECF` | Structure |
-| SensitivityType | 0x8830 | `exif:SensitivityType` | Integer |
-| StandardOutputSensitivity | 0x8831 | `exif:StandardOutputSensitivity` | Integer |
-| RecommendedExposureIndex | 0x8832 | `exif:RecommendedExposureIndex` | Integer |
-| ISOSpeed | 0x8833 | `exif:ISOSpeed` | Integer |
-| ISOSpeedLatitudeyyy | 0x8834 | `exif:ISOSpeedLatitudeyyy` | Integer |
-| ISOSpeedLatitudezzz | 0x8835 | `exif:ISOSpeedLatitudezzz` | Integer |
+| SensitivityType | 0x8830 | `exifEX:SensitivityType` | Integer |
+| StandardOutputSensitivity | 0x8831 | `exifEX:StandardOutputSensitivity` | Integer |
+| RecommendedExposureIndex | 0x8832 | `exifEX:RecommendedExposureIndex` | Integer |
+| ISOSpeed | 0x8833 | `exifEX:ISOSpeed` | Integer |
+| ISOSpeedLatitudeyyy | 0x8834 | `exifEX:ISOSpeedLatitudeyyy` | Integer |
+| ISOSpeedLatitudezzz | 0x8835 | `exifEX:ISOSpeedLatitudezzz` | Integer |
 | ExifVersion | 0x9000 | `exif:ExifVersion` | Text |
 | DateTimeOriginal | 0x9003 | `exif:DateTimeOriginal` | Date |
 | DateTimeDigitized | 0x9004 | `exif:DateTimeDigitized` | Date |
@@ -86,7 +86,7 @@ functions, auto-synthesis), see [`imageio-mapping.md`](imageio-mapping.md).
 | DeviceSettingDescription | 0xa40b | `exif:DeviceSettingDescription` | Structure |
 | SubjectDistanceRange | 0xa40c | `exif:SubjectDistanceRange` | Integer |
 | ImageUniqueID | 0xa420 | `exif:ImageUniqueID` | Text |
-| Gamma | 0xa500 | `exif:Gamma` | Rational |
+| Gamma | 0xa500 | `exifEX:Gamma` | Rational |
 
 ---
 
@@ -120,7 +120,7 @@ EXIF 2.3 standardized equivalent tags:
 
 | Description | XMP Path | EXIF 2.3+ Equivalent |
 |-------------|----------|---------------------|
-| Lens info [min FL, max FL, min FN, max FN] | `aux:LensInfo` | LensSpecification (0xa432) |
+| Lens info [min FL, max FL, min FN at min FL, min FN at max FL] | `aux:LensInfo` | LensSpecification (0xa432) |
 | Lens model name | `aux:Lens` | LensModel (0xa434) |
 | Lens numeric identifier | `aux:LensID` | — (no standard equivalent) |
 | Lens serial number | `aux:LensSerialNumber` | LensSerialNumber (0xa435) |

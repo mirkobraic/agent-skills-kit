@@ -2,7 +2,7 @@
 
 > Part of [GPS Reference](README.md)
 
-All 31 tags defined in the GPS IFD by the EXIF specification (CIPA DC-008).
+All 32 tags defined in the GPS IFD by the EXIF specification (CIPA DC-008).
 The GPS IFD is a sub-IFD pointed to by IFD0 tag `0x8825`
 (`GPSInfoIFDPointer`). Each tag entry follows the standard 12-byte IFD entry
 format (tag ID, data type, count, value/offset).
@@ -261,7 +261,7 @@ The remainder of the data after the 8-byte prefix is the actual text content.
 | 0x001E | GPSDifferential | SHORT | 1 | `kCGImagePropertyGPSDifferental` | `0` = no differential correction, `1` = differential correction applied (DGPS). |
 
 **Note the ImageIO spelling:** The constant is `kCGImagePropertyGPSDifferental`
-(missing an 'i' -- "Diferental" instead of "Differential"). This is a known
+(missing an 'i' -- "Differental" instead of "Differential"). This is a known
 Apple typo that has persisted since iOS 4.0 and cannot be corrected without
 breaking backward compatibility.
 

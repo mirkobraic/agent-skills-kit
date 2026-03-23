@@ -308,7 +308,7 @@ validation. This means:
 | TIFF | Yes | Full support via `CopyImageSource` |
 | PSD | Yes | Full support via `CopyImageSource` |
 | HEIC/HEIF | **No** | Must re-encode via `AddImage` or `AddImageAndMetadata` |
-| WebP | **No** | Read-only in ImageIO (no write support at all) |
+| WebP | **No** | No lossless metadata update; write support limited or absent depending on OS version |
 | DNG | **No** | Must re-encode |
 | AVIF | **No** | Read-only or limited write |
 

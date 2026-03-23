@@ -16,8 +16,8 @@ accompanying verification test suite.
 |--------|--------|
 | **Document** | Guidelines for Handling Image Metadata, Version 2.0 |
 | **Date** | November 2010 |
-| **Founded** | 2007 |
-| **Members** | Adobe, Apple, Canon, Microsoft, Nokia (founding); Sony (joined 2008) |
+| **Founded** | 2006 |
+| **Members** | Adobe, Apple, Canon, Microsoft, Nokia, Sony (founding members) |
 | **Status** | No updates since 2010; the MWG is effectively dormant |
 | **Scope** | Interoperability among EXIF, IPTC IIM, and XMP in consumer digital images |
 | **Spec PDF** | [MWG Guidelines 2.0](https://s3.amazonaws.com/software.tagthatphoto.com/docs/mwg_guidance.pdf) |
@@ -502,7 +502,7 @@ recommends:
 3. **Validators** should not reject files with UTF-8 in ASCII fields.
 
 **EXIF 3.0 update (2023):** The EXIF 3.0 specification formally added UTF-8
-support as a new data type (type 13, "utf8"), making the MWG recommendation
+support as a new data type (type 129 (0x81), "utf8"), making the MWG recommendation
 less necessary for new images but still relevant for the billions of existing
 legacy files.
 

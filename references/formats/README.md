@@ -66,9 +66,9 @@ EXIF/GPS behavior at runtime on target OS.
 |-----------|-------|----------|--------------|-------|-----------|
 | JPEG      | Yes   | No*      | No           | No    | No        |
 | PNG       | No    | Yes      | Yes (16-bit) | Yes   | Yes (APNG)|
-| HEIF/HEIC | Yes   | No       | Yes (10-bit) | Yes   | Yes (HEICS)|
+| HEIF/HEIC | Yes   | Yes*****  | Yes (10-bit) | Yes   | Yes (HEICS)|
 | GIF       | No    | Yes**    | No           | No*** | Yes       |
-| DNG       | No    | Yes      | Yes (32-bit) | No    | No        |
+| DNG       | Yes   | Yes      | Yes (32-bit) | No    | No        |
 | WebP      | Yes   | Yes      | No           | Yes   | Yes       |
 | AVIF      | Yes   | Yes      | Yes (12-bit) | Yes   | Yes (AVIS)|
 | JPEG XL   | Yes   | Yes      | Yes (32-bit) | Yes   | Yes       |
@@ -80,6 +80,7 @@ EXIF/GPS behavior at runtime on target OS.
 \*\* GIF uses LZW, which is lossless for palette indices but limited to 256 colors.
 \*\*\* GIF supports 1-bit transparency (one palette index), not true alpha.
 \*\*\*\* OpenEXR supports multi-part files but not timed animation.
+\*\*\*\*\* HEVC supports lossless coding, but Apple does not use it for camera capture.
 
 ---
 

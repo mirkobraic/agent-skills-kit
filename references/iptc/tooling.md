@@ -53,7 +53,7 @@ Namespace prefix mapping (spec docs) to ExifTool group names:
 Examples:
 
 - `XMP-iptcExt:DigitalSourceType`
-- `XMP-iptcCore:Creator`
+- `XMP-dc:Creator`
 - `IPTC:Caption-Abstract`
 
 ## 4. Common workflows
@@ -68,7 +68,7 @@ python3 scripts/iptc_metadata.py read image.jpg --iptc
 
 ```
 python3 scripts/iptc_metadata.py read image.jpg \
-  --tags XMP-iptcExt:DigitalSourceType,XMP-iptcCore:Creator
+  --tags XMP-iptcExt:DigitalSourceType,XMP-dc:Creator
 ```
 
 ### C) Write tags
@@ -76,7 +76,7 @@ python3 scripts/iptc_metadata.py read image.jpg \
 ```
 python3 scripts/iptc_metadata.py write image.jpg \
   --set-inline XMP-iptcExt:DigitalSourceType=https://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia \
-  --set-inline XMP-iptcCore:Creator=Jane Doe
+  --set-inline XMP-dc:Creator=Jane Doe
 ```
 
 ### D) Validate tags (non-zero exit on mismatch)
@@ -84,7 +84,7 @@ python3 scripts/iptc_metadata.py write image.jpg \
 ```
 python3 scripts/iptc_metadata.py validate image.jpg \
   --expect-inline XMP-iptcExt:DigitalSourceType=https://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia \
-  --expect-inline XMP-iptcCore:Creator=Jane Doe
+  --expect-inline XMP-dc:Creator=Jane Doe
 ```
 
 ## 5. Read command details
@@ -99,7 +99,7 @@ Examples:
 
 ```
 python3 scripts/iptc_metadata.py read image.jpg --groups XMP-iptcExt,XMP-iptcCore
-python3 scripts/iptc_metadata.py read image.jpg --tags XMP-iptcCore:Creator
+python3 scripts/iptc_metadata.py read image.jpg --tags XMP-dc:Creator
 ```
 
 ## 6. Write command details
@@ -113,7 +113,7 @@ Example JSON (`expected-tags.json`):
 ```
 {
   "XMP-iptcExt:DigitalSourceType": "https://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
-  "XMP-iptcCore:Creator": ["Jane Doe", "John Smith"]
+  "XMP-dc:Creator": ["Jane Doe", "John Smith"]
 }
 ```
 
@@ -138,7 +138,7 @@ Example (subset match):
 
 ```
 python3 scripts/iptc_metadata.py validate image.jpg \
-  --expect-inline XMP-iptcCore:Creator=Jane Doe \
+  --expect-inline XMP-dc:Creator=Jane Doe \
   --contains
 ```
 
@@ -157,7 +157,7 @@ Example:
 ```
 python3 scripts/iptc_metadata.py write image.jpg \
   --params "-overwrite_original -P" \
-  --set-inline XMP-iptcCore:Creator=Jane Doe
+  --set-inline XMP-dc:Creator=Jane Doe
 ```
 
 ## 9. Troubleshooting

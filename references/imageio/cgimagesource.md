@@ -168,7 +168,7 @@ These option keys can be passed to creation functions and
 | `kCGImageSourceShouldAllowFloat` | CFBoolean | false | Allow floating-point pixel components | 4.0+ |
 | `kCGImageSourceShouldCache` | CFBoolean | true (64-bit) | Cache decoded image data in memory | 4.0+ |
 | `kCGImageSourceShouldCacheImmediately` | CFBoolean | false | Force decode at creation (not at render) | 7.0+ |
-| `kCGImageSourceSubsampleFactor` | CFNumber | — | Downsample during decode (2, 4, or 8). JPEG, HEIF, TIFF, PNG only. | 9.0+ |
+| `kCGImageSourceSubsampleFactor` | CFNumber | — | Downsample during decode (2, 4, or 8). JPEG, HEIF, TIFF, and PNG. | 9.0+ |
 | `kCGImageSourceDecodeRequest` | CFString | — | Request HDR or SDR decode (value: `kCGImageSourceDecodeToHDR` or `kCGImageSourceDecodeToSDR`) | 17.0+ |
 | `kCGImageSourceDecodeToHDR` | CFString | — | Value for `kCGImageSourceDecodeRequest` to decode as HDR | 17.0+ |
 | `kCGImageSourceDecodeToSDR` | CFString | — | Value for `kCGImageSourceDecodeRequest` to decode as SDR | 17.0+ |

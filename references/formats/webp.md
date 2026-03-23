@@ -307,8 +307,7 @@ Format-specific codec properties (VP8 quality, lossless flag) are not exposed.
 | GPS data read         | Likely supported (via EXIF); verify         |
 | Lossless metadata edit| Not supported (read-only format)            |
 
-ImageIO uses a hardware-accelerated codec for WebP decoding, which is
-significantly faster than the CPU-based libwebp. However, some valid WebP
+ImageIO uses an optimized codec for WebP decoding. However, some valid WebP
 files (especially edge cases with unusual VP8 features) may fail to decode
 on certain OS versions.
 
@@ -338,10 +337,10 @@ on certain OS versions.
 |-----------------------|------------------------------------------------|
 | UTI                   | `org.webmproject.webp`                         |
 | ImageIO Read          | iOS 14.0+                                      |
-| ImageIO Write         | **Not supported**                              |
+| ImageIO Write         | Not publicly documented; verify at runtime     |
 | ImageIO Dictionary    | `kCGImagePropertyWebPDictionary`               |
 | Metadata Standards    | EXIF, XMP, ICC (verify at runtime)             |
-| Lossless Meta Edit    | No (read-only format in ImageIO)               |
+| Lossless Meta Edit    | Verify at runtime (typically unavailable)       |
 | Color Depth           | 8-bit per channel                              |
 | Color Models          | RGB (YCbCr for VP8, ARGB for VP8L)             |
 | Alpha Channel         | Yes (ALPH chunk for VP8, native for VP8L)      |
@@ -353,9 +352,10 @@ on certain OS versions.
 
 ## Common Gotchas
 
-1. **Read-only in ImageIO** -- You cannot create WebP files using
-   `CGImageDestination`. Use libwebp or a third-party wrapper (SDWebImage,
-   Kingfisher) for encoding.
+1. **ImageIO WebP write support is ambiguous** -- Public documentation clearly
+   covers WebP decode. Verify destination support on target OS with
+   `CGImageDestinationCopyTypeIdentifiers()`. If unavailable, use libwebp or a
+   third-party wrapper (SDWebImage, Kingfisher) for encoding.
 
 2. **Metadata support uncertainty** -- Apple does not publish a detailed
    metadata capability matrix for WebP. Test EXIF/GPS/XMP access on your

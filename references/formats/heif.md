@@ -357,9 +357,9 @@ above.
 | Color Models          | RGB (YCbCr internally via HEVC)               |
 | Alpha Channel         | Yes (via auxiliary alpha image)                |
 | Animation             | Yes (HEICS)                                    |
-| Compression           | Lossy (HEVC intra-frame)                       |
+| Compression           | Lossy (HEVC intra-frame); HEVC also supports lossless but Apple does not use it |
 | Auxiliary Data        | Depth, disparity, mattes, gain maps           |
-| Max Dimensions        | 16384 x 16384 (HEVC Level 6)                  |
+| Max Dimensions        | 16384 x 16384 (Apple encoder limit, not a HEVC Level 6 spec limit) |
 
 ---
 

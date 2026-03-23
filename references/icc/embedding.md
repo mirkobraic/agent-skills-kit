@@ -38,7 +38,7 @@ the length field). After subtracting the 14-byte overhead (12 for identifier +
 - **Large profiles** (> 65,519 bytes): Split across multiple APP2 segments.
   Sequence numbers 1..N, all with Count = N. Decoders must reassemble by
   sequence number, not by marker order.
-- **Maximum profile size:** 255 chunks x 65,519 bytes = ~16.3 MB. This is
+- **Maximum profile size:** 255 chunks x 65,519 bytes = ~16.7 MB. This is
   sufficient for even the largest multi-channel CLUT profiles.
 
 > **Reassembly note:** The ICC specification warns that JPEG markers may not
@@ -158,7 +158,7 @@ item properties.
 | Type | Code | Description |
 |------|------|-------------|
 | **nclx** | `'nclx'` | Coding-Independent Code Points (CICP): primaries, transfer function, matrix coefficients, full-range flag. Compact (just a few bytes). |
-| **rICC** | `'rICC'` | Restricted ICC profile: only Display/Input/Output class, only recognized ICC color spaces. Raw ICC bytes embedded directly. |
+| **rICC** | `'rICC'` | Restricted ICC profile: only Display/Input/Output/ColorSpace class, only recognized ICC color spaces. Raw ICC bytes embedded directly. |
 | **prof** | `'prof'` | Unrestricted ICC profile. Any ICC profile, including DeviceLink and NamedColor. Raw ICC bytes. |
 
 **nclx CICP values for common color spaces:**
@@ -422,7 +422,7 @@ sRGB profile, and produces a universally compatible image. See
 
 | Format | Mechanism | Compressed | Chunked | Max Profile Size | CICP Alt |
 |--------|-----------|------------|---------|-----------------|----------|
-| **JPEG** | APP2 `ICC_PROFILE` | No | Yes (64 KB chunks) | ~16 MB (255 chunks) | No |
+| **JPEG** | APP2 `ICC_PROFILE` | No | Yes (64 KB chunks) | ~16.7 MB (255 chunks) | No |
 | **PNG** | `iCCP` chunk | Yes (zlib) | No | ~2 GB (PNG chunk limit) | Yes (`cICP`, PNG 3rd ed.) |
 | **TIFF** | Tag 34675 | No | No | ~4 GB (TIFF limit) | No |
 | **HEIF/HEIC** | `colr` box | No | No | Container limit | Yes (nclx) |

@@ -53,12 +53,13 @@ whether an APP1 segment contains EXIF or XMP.
 #### Size Limit
 
 A JPEG marker segment has a 2-byte length field, limiting total segment size
-to 65,535 bytes. After subtracting the 2-byte length field and the 29-byte
-namespace identifier plus null byte, the maximum XMP packet size is:
+to 65,535 bytes. After subtracting the 2-byte length field, the 29-byte
+namespace identifier (including null terminator), and 2 additional bytes of
+overhead that some implementations account for, the practical maximum XMP
+packet size is:
 
 ```
-65,535 - 2 - 29 = 65,504 bytes (theoretical)
-65,502 bytes (commonly cited practical limit)
+65,535 - 2 - 29 - 2 = 65,502 bytes
 ```
 
 Most XMP packets are well under this limit (typically 2-10 KB for normal
@@ -347,7 +348,7 @@ Key points:
 - The XMP packet should include padding for in-place editing
 - PDF/A (ISO 19005) **requires** XMP metadata with specific properties
   (`dc:title`, `dc:creator`, `xmp:CreateDate`, `xmp:ModifyDate`,
-  `pdf:Producer`, `pdf:PDFVersion`)
+  `pdf:Producer`, `pdfaid:part`, `pdfaid:conformance`)
 
 ---
 

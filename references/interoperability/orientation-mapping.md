@@ -102,7 +102,7 @@ of two primitive operations: 90-degree rotation and horizontal flip.
 | 4 | 180 | Yes | `[1 0; 0 -1]` |
 | 5 | 90 CCW | Yes | `[0 1; 1 0]` |
 | 6 | 90 CW | No | `[0 -1; 1 0]` |
-| 7 | 90 CW | Yes | `[0 1; -1 0]` |
+| 7 | 90 CW | Yes | `[0 -1; -1 0]` |
 | 8 | 90 CCW | No | `[0 1; -1 0]` |
 
 For orientations 5-8, the display dimensions are transposed (width and

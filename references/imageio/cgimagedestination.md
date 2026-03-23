@@ -182,7 +182,7 @@ After finalization the destination cannot be reused.
 | `kCGImageDestinationMergeMetadata` | CFBoolean | Merge with existing (vs replace). See merge vs replace behavior below | 7.0+ |
 | `kCGImageMetadataShouldExcludeXMP` | CFBoolean | Strip XMP packets (preserves EXIF/IPTC) | 7.0+ |
 | `kCGImageMetadataShouldExcludeGPS` | CFBoolean | Strip GPS/location data (**does NOT filter proprietary location data in MakerNote**) | 8.0+ |
-| `kCGImageDestinationDateTime` | CFString or CFData | Set/update creation datetime (EXIF DateTime or ISO 8601 format). **Mutually exclusive with `kCGImageDestinationMetadata`** | 7.0+ |
+| `kCGImageDestinationDateTime` | CFString or CFDate | Set/update creation datetime (EXIF DateTime or ISO 8601 format). **Mutually exclusive with `kCGImageDestinationMetadata`** | 7.0+ |
 | `kCGImageDestinationOrientation` | CFNumber (1–8) | Set EXIF orientation. **Mutually exclusive with `kCGImageDestinationMetadata`** | 7.0+ |
 
 ### HDR / Gain Map (iOS 17+)

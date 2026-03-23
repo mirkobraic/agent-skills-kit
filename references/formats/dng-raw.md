@@ -118,9 +118,9 @@ and CIE XYZ.
 | CameraCalibration2          | 50724   | SRATIONAL[] | 1.0     | Per-camera adjustment 2     |
 | ReductionMatrix1            | 50725   | SRATIONAL[] | 1.0     | Reduction, illuminant 1     |
 | ReductionMatrix2            | 50726   | SRATIONAL[] | 1.0     | Reduction, illuminant 2     |
-| IlluminantData1             | --      | UNDEFINED   | 1.6     | Custom illuminant spectrum 1 |
-| IlluminantData2             | --      | UNDEFINED   | 1.6     | Custom illuminant spectrum 2 |
-| IlluminantData3             | --      | UNDEFINED   | 1.6     | Custom illuminant spectrum 3 |
+| IlluminantData1             | 52533   | UNDEFINED   | 1.6     | Custom illuminant spectrum 1 |
+| IlluminantData2             | 52534   | UNDEFINED   | 1.6     | Custom illuminant spectrum 2 |
+| IlluminantData3             | 52535   | UNDEFINED   | 1.6     | Custom illuminant spectrum 3 |
 
 `ColorMatrix1` is required for all non-monochrome DNG files.
 `CalibrationIlluminant1` values use EXIF LightSource codes (e.g., 17 =

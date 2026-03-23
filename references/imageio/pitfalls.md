@@ -63,7 +63,7 @@ Same values 1–8, same meaning. Used with `kCGImageSourceCreateThumbnailWithTra
 | UIImage | EXIF | Transform |
 |---------|------|-----------|
 | `.up` (0) | 1 | None |
-| `.down` (2) | 3 | 180° |
+| `.down` (1) | 3 | 180° |
 | `.right` (6→mapped) | 6 | 90° CW |
 | `.left` (8→mapped) | 8 | 90° CCW |
 

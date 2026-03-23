@@ -4,9 +4,12 @@ GIF (Graphics Interchange Format) is a bitmap image format introduced by
 CompuServe in 1987 (GIF87a) and updated in 1989 (GIF89a). It supports
 animation, transparency, and palette-based color (up to 256 colors per frame).
 
-GIF has **virtually no metadata support** -- it does not support EXIF, XMP,
-IPTC IIM, ICC profiles, or GPS data. Its primary relevance to ImageIO is
-animation (frame timing, loop count, disposal methods).
+GIF has **virtually no metadata support** -- it does not support EXIF, IPTC
+IIM, ICC profiles, or GPS data. The XMP specification (Part 3) defines an
+Application Extension mechanism for embedding XMP in GIF (`"XMP DataXMP"`),
+but this is rarely used in practice and not supported by ImageIO. GIF's
+primary relevance to ImageIO is animation (frame timing, loop count,
+disposal methods).
 
 ---
 
@@ -267,15 +270,16 @@ drove the development of PNG as a patent-free alternative.
 | Standard    | Supported | Notes                                         |
 |-------------|-----------|-----------------------------------------------|
 | **EXIF**    | No        | No mechanism for EXIF data                    |
-| **XMP**     | No        | No mechanism for XMP data                     |
+| **XMP**     | Limited   | XMP Spec Part 3 defines Application Extension mechanism, but rarely used and not supported by ImageIO |
 | **IPTC IIM**| No        | No mechanism for IPTC data                    |
 | **ICC**     | No        | No color profile support; limited to palette  |
 | **GPS**     | No        | No location data support                      |
 | **Comment** | Yes (limited) | Comment Extension (unstructured ASCII text) |
 
-GIF is the only common image format with essentially **zero** structured
-metadata support. If metadata is needed, convert to a format that supports
-it (PNG, JPEG, HEIC).
+GIF is the only common image format with essentially **no practical**
+structured metadata support. While the XMP specification defines a GIF
+Application Extension mechanism, it is not widely adopted. If metadata is
+needed, convert to a format with robust support (PNG, JPEG, HEIC).
 
 ---
 

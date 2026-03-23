@@ -364,7 +364,7 @@ becomes a problem when:
 **Technical details:**
 - Maximum 255 chunks per ICC profile (sequence number is 1 byte).
 - Each chunk carries up to 65,519 bytes of profile data.
-- Maximum total profile size: ~16.3 MB.
+- Maximum total profile size: ~16.7 MB.
 - Decoders must use sequence numbers, not file order, for reassembly.
 
 **Mitigation:** When writing JPEG with large profiles, prefer smaller profiles

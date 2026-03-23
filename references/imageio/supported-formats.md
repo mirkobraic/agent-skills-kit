@@ -32,7 +32,7 @@ The lists below reflect the state as of iOS 18 / macOS 15.
 | HEIC (HEVC)      | `public.heic`          | ✓    | ✓     | 11.0+ | `kCGImagePropertyHEIFDictionary` (16.0+) |
 | HEIF (generic)   | `public.heif`          | ✓    | ✓     | 16.0+ | `kCGImagePropertyHEIFDictionary`         |
 | HEICS (sequence) | `public.heics`         | ✓    | ✓     | 13.0+ | `kCGImagePropertyHEICSDictionary`        |
-| WebP             | `org.webmproject.webp` | ✓    | —     | 14.0+ | `kCGImagePropertyWebPDictionary`         |
+| WebP             | `org.webmproject.webp` | ✓    | —*    | 14.0+ | `kCGImagePropertyWebPDictionary`         |
 | AVIF             | `public.avif`          | ✓    | ✓?    | 16.0+ | `kCGImagePropertyAVISDictionary`         |
 | AVIS (sequence)  | `public.avis`          | ✓    | —     | 16.0+ | `kCGImagePropertyAVISDictionary`         |
 | JPEG XL          | `public.jpeg-xl`       | ✓    | —     | 17.0+ | —                                        |
@@ -42,6 +42,11 @@ The lists below reflect the state as of iOS 18 / macOS 15.
 > **AVIF write note:** Apple confirms AVIF read support in iOS 16, but no
 > public documentation explicitly lists `public.avif` as a writable
 > `CGImageDestination` type. Verify write support at runtime via
+> `CGImageDestinationCopyTypeIdentifiers()`.
+>
+> **WebP write note:** WebP decoding is documented (`org.webmproject.webp`,
+> iOS 14+), but public documentation for writable `CGImageDestination` support
+> is unclear. Verify write support at runtime via
 > `CGImageDestinationCopyTypeIdentifiers()`.
 >
 > **JPEG XL note:** ImageIO decode support added in iOS 17. The formal
@@ -136,7 +141,7 @@ Primarily for game/GPU rendering, not photo applications:
 | **JPEG**      | ✓    | ✓           | ✓        | ✓   | ✓              |
 | **TIFF**      | ✓    | ✓           | ✓        | ✓   | ✓              |
 | **HEIF/HEIC** | ✓    | ✓           | —        | ✓   | ✓              |
-| **AVIF**      | —    | ✓           | —        | ✓   | —              |
+| **AVIF**      | ✓    | ✓           | —        | ✓   | ✓              |
 | **PNG**       | —    | ✓ (iTXt)    | —        | ✓   | —              |
 | **WebP**      | —?   | ✓           | —        | ✓   | —?             |
 | **DNG**       | ✓    | ✓           | —        | ✓   | ✓              |
@@ -175,7 +180,7 @@ Primarily for game/GPU rendering, not photo applications:
 | Format | Depth | Gain Map      | Portrait Matte | Segmentation |
 | ------ | ----- | ------------- | -------------- | ------------ |
 | HEIC   | ✓     | ✓             | ✓              | ✓            |
-| JPEG   | —     | ✓ (iOS 14.1+) | —              | —            |
+| JPEG   | —     | ✓ (iOS 17.0+) | —              | —            |
 | DNG    | ✓     | —             | —              | —            |
 
 

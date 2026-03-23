@@ -1,29 +1,29 @@
 ---
 name: ios-image-metadata-skill
-description: Use when tasks involve reading, writing, debugging, or preserving image metadata on iOS/macOS with ImageIO, including EXIF, XMP, IPTC, GPS, TIFF, ICC, format-specific metadata behavior, orientation mapping, and cross-standard sync between property dictionaries and CGImageMetadata.
+description: Use when tasks involve ImageIO metadata work on iOS/macOS, including EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation behavior, metadata preservation, and interop mismatches across standards.
 ---
 
 # iOS Image Metadata Skill
 
-## When to Use
+## Use For
 
 - The task touches EXIF/XMP/IPTC/GPS/TIFF/ICC metadata or ImageIO APIs.
-- The user needs read/write/preserve guidance for metadata pipelines.
-- The issue is interop-related: orientation, timezone, GPS sign/ref, or XMP vs property-dict mismatch.
-- The request asks format capability or lossless metadata-update constraints.
+- The user needs read/write/preserve guidance for metadata pipelines on Apple platforms.
+- The issue is interop-related: orientation, timezone tags, GPS sign/ref, or XMP vs property-dictionary mismatch.
+- The request asks format capability, lossless update behavior, or metadata-loss risk.
 
-## When Not to Use
+## Do Not Use For
 
 - Pure UI/view-layer image tasks with no metadata requirements.
 - Non-Apple metadata stacks where ImageIO and CoreGraphics APIs are not part of the solution.
 - General Swift questions unrelated to image files, metadata schemas, or metadata persistence.
 
-## Workflow
+## Fast Workflow
 
-1. Classify intent: read, write, preserve, interoperability, format capability, or MakerNote.
+1. Classify intent: `read`, `write`, `preserve`, `interop`, `format-capability`, or `MakerNote`.
 2. Route to the smallest relevant reference first (table below).
 3. Validate format constraints before proposing write logic.
-4. Answer with exact API/key names and data-loss caveats.
+4. Answer with exact API/key names plus lossless/data-loss caveats.
 
 ## Quick Routing
 
@@ -40,41 +40,24 @@ description: Use when tasks involve reading, writing, debugging, or preserving i
 | Color profile or Display P3 issues | ICC reference | `references/icc/README.md`, `references/icc/common-profiles.md` |
 | Vendor-specific camera fields | MakerNote docs | `references/makers/README.md` |
 
-## Key Concepts
+## Guardrails
 
-- **Two metadata APIs in ImageIO**
-  - Property dictionaries via `CGImageSourceCopyPropertiesAtIndex`.
-  - XMP tree via `CGImageSourceCopyMetadataAtIndex`.
-- **Bridge behavior exists but is not full MWG conformance**
-  - ImageIO often auto-synthesizes between property dictionaries and XMP.
-  - ImageIO does not reconcile `IPTCDigest`.
-- **Format dictates capability**
-  - IPTC IIM is legacy and mainly JPEG/TIFF.
-  - Modern IPTC flows use XMP (`Iptc4xmpCore`, `Iptc4xmpExt`).
-- **Lossless metadata update is limited**
-  - `CGImageDestinationCopyImageSource` is lossless only for specific formats.
-- **Metadata-loss risk is real**
-  - `UIImage` and some image-processing paths can strip or alter metadata unless explicitly preserved.
+- Prefer `CGImageSource`/`CGImageDestination` for metadata-critical flows; avoid `UIImage` paths unless preservation is explicit.
+- Use exact constants (`kCGImageProperty...`) and name the parent dictionary.
+- For GPS EXIF keys, use absolute values + `Ref` letters (`N/S`, `E/W`), not signed decimals.
+- For EXIF times, include matching `OffsetTime*` tags when timezone matters.
+- For IPTC, include IIM + XMP mappings when both exist; IPTC Extension is XMP-only.
+- For writes, always state whether the path is lossless for the target format.
+- Call out reconciliation limits between XMP and property dictionaries (including `IPTCDigest` behavior).
 
 ## Tooling
 
 - `scripts/iptc_metadata.py` — read, write, or validate IPTC/XMP metadata via ExifTool CLI (`references/iptc/tooling.md`).
 
-## Response Guidance
-
-- Use exact Apple API names (`kCGImagePropertyExifDateTimeOriginal`, not "EXIF date").
-- When referencing property keys, include the dictionary they belong to.
-- For EXIF/ImageIO GPS dictionary keys, note the absolute-value + reference-letter convention (not signed decimals).
-- For EXIF timestamps, mention the matching `OffsetTime*` tag (`OffsetTime`, `OffsetTimeOriginal`, or `OffsetTimeDigitized`) for timezone awareness.
-- For IPTC, provide both IIM and XMP mappings when both exist; note Extension fields are XMP-only.
-- Warn about metadata loss through `UIImage` — always recommend `CGImageSource`/`CGImageDestination`.
-- For metadata writing, always state whether lossless update is possible for the target format.
-
 ## References
 
 - `references/README.md` — central index for all metadata reference areas
-- `references/imageio/` — APIs, property keys, formats, auxiliary data, pitfalls
-- `references/exif/`, `references/xmp/`, `references/iptc/`, `references/gps/`, `references/tiff/`, `references/icc/` — standard-specific deep dives
-- `references/interoperability/` — MWG sync rules, overlap mapping, ImageIO behavior, orientation mapping
+- `references/imageio/` — API behavior, property keys, format support, pitfalls
+- `references/exif/`, `references/xmp/`, `references/iptc/`, `references/gps/`, `references/tiff/`, `references/icc/` — standards deep dives
+- `references/interoperability/` — overlap/sync behavior, MWG guidance, orientation mapping
 - `references/formats/` and `references/makers/` — container behavior and vendor MakerNotes
-- `references/iptc/tooling.md` and `PLAN.md` — IPTC CLI workflow and repo roadmap

@@ -76,7 +76,7 @@ are available since iOS 4.0 unless noted.
 | `kCGImagePropertyGPSDifferental` | CFNumber (Int) | 0x001E GPSDifferential | 0 or 1. **Note misspelling** in constant name. |
 
 > **Spelling note:** `kCGImagePropertyGPSDifferental` is missing an 'i' in
-> "Diferental". This is a known Apple SDK typo preserved for backward
+> "Differental". This is a known Apple SDK typo preserved for backward
 > compatibility. The EXIF tag name is "GPSDifferential".
 
 ### Type Conversion Summary
@@ -270,10 +270,11 @@ func updateGPSLossless(
 }
 ```
 
-> **Important:** Lossless metadata update is only supported for JPEG, PNG,
-> TIFF, and PSD. HEIC requires full re-encoding. For lossless-capable formats,
-> this is the preferred approach -- it avoids quality loss from JPEG
-> recompression and is faster since no pixel decoding/encoding occurs.
+> **Important:** Lossless metadata update via `CGImageDestinationCopyImageSource`
+> is supported for JPEG, PNG, TIFF, and PSD. HEIC/HEIF requires re-encoding
+> via `AddImage` or `AddImageAndMetadata`. For lossless-capable formats, this
+> is the preferred approach -- it avoids quality loss from recompression and
+> is faster since no pixel decoding/encoding occurs.
 
 ### Update GPS via XMP (CGImageMetadata API)
 

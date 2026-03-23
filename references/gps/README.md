@@ -62,7 +62,7 @@ carry EXIF data:
 | **HEIF/HEIC** | Full | EXIF item in ISOBMFF container, no 64 KB limit |
 | **TIFF** | Full | Native IFD structure |
 | **DNG** | Full | TIFF-based, EXIF IFD location preferred |
-| **PNG** | Via eXIf chunk | PNG 1.5+; adoption growing |
+| **PNG** | Via eXIf chunk | PNG Extensions (2017); adoption growing |
 | **WebP** | Via EXIF chunk | Read-only in ImageIO |
 | **AVIF** | Via EXIF item | ISOBMFF container like HEIF |
 | **GIF** | Not supported | No EXIF capability |

@@ -32,7 +32,7 @@ a set of property names within a unique XML namespace URI.
 | `crs` | `http://ns.adobe.com/camera-raw-settings/1.0/` | Camera Raw Settings | Adobe |
 | `tiff` | `http://ns.adobe.com/tiff/1.0/` | TIFF Properties | Adobe (XMP) |
 | `exif` | `http://ns.adobe.com/exif/1.0/` | EXIF Properties | Adobe (XMP) |
-| `exifEX` | `http://cipa.jp/exif/1.0/` | EXIF Extension (2.31+) | CIPA |
+| `exifEX` | `http://cipa.jp/exif/1.0/` | EXIF Extension (2.3+) | CIPA |
 | `aux` | `http://ns.adobe.com/exif/1.0/aux/` | EXIF Auxiliary | Adobe |
 | `dng` | `http://ns.adobe.com/dng/1.0/` | DNG Properties | Adobe |
 
@@ -425,8 +425,8 @@ mapping table with all properties, see `../exif/xmp-mapping.md`.
 | `exif:ExifVersion` | Text | EXIF version string (e.g., `"0232"`) |
 | `exif:PixelXDimension` | Integer | Valid image width |
 | `exif:PixelYDimension` | Integer | Valid image height |
-| `exif:GPSLatitude` | Text | GPS latitude (encoded as `"DDD,MM,SS.SSK"`) |
-| `exif:GPSLongitude` | Text | GPS longitude (encoded as `"DDD,MM,SS.SSK"`) |
+| `exif:GPSLatitude` | GPSCoordinate | GPS latitude (encoded as `"DDD,MM,SS.SSK"`) |
+| `exif:GPSLongitude` | GPSCoordinate | GPS longitude (encoded as `"DDD,MM,SS.SSK"`) |
 | `exif:GPSAltitude` | Rational | GPS altitude in meters |
 | `exif:GPSAltitudeRef` | Integer | 0=above sea level, 1=below |
 | `exif:GPSTimeStamp` | Date | GPS UTC time |
@@ -442,7 +442,7 @@ mapping table with all properties, see `../exif/xmp-mapping.md`.
 
 **URI:** `http://cipa.jp/exif/1.0/`
 **Origin:** CIPA (Camera & Imaging Products Association)
-**Purpose:** EXIF 2.31+ tags that postdate the original `exif:` namespace
+**Purpose:** EXIF 2.3+ tags that postdate the original `exif:` namespace
 **ImageIO:** Pre-registered (`kCGImageMetadataNamespaceExifEX`)
 
 | Property | XMP Type | EXIF Tag | Description |
@@ -498,7 +498,7 @@ Properties are grouped into administrative, descriptive, and rights categories.
 
 | Property | XMP Type | Description |
 |----------|----------|-------------|
-| `Iptc4xmpCore:CountryCode` | Text | ISO 3166-1 alpha-3 country code |
+| `Iptc4xmpCore:CountryCode` | Text | ISO 3166-1 country code (max 3 characters) |
 | `Iptc4xmpCore:IntellectualGenre` | Text | Intellectual genre (e.g., `"Current"`, `"Feature"`) |
 | `Iptc4xmpCore:Scene` | Bag Text | IPTC Scene codes |
 | `Iptc4xmpCore:SubjectCode` | Bag Text | IPTC Subject Reference codes |
@@ -602,7 +602,7 @@ This property is increasingly important for AI transparency:
 
 | URI | Meaning |
 |-----|---------|
-| `http://ns.useplus.org/ldf/vocab/MR-NON` | Not Applicable |
+| `http://ns.useplus.org/ldf/vocab/MR-NON` | None (no model release obtained) |
 | `http://ns.useplus.org/ldf/vocab/MR-NAP` | Not Applicable |
 | `http://ns.useplus.org/ldf/vocab/MR-UMR` | Unlimited Model Releases |
 | `http://ns.useplus.org/ldf/vocab/MR-LMR` | Limited or Incomplete Model Releases |

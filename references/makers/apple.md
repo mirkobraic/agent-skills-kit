@@ -128,7 +128,7 @@ reverse engineering.
 | 1 | Back Normal (telephoto on dual-camera systems, or ultra-wide context) |
 | 6 | Front-facing camera |
 
-### Photographic Styles (iOS 16+)
+### Photographic Styles (iOS 15+)
 
 | Tag ID | Name | Type | Description |
 |--------|------|------|-------------|

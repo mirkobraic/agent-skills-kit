@@ -109,7 +109,7 @@ WebP, and AVIF do not have this limit.
 | **TIFF** | Native IFD structure | No practical limit | EXIF is part of the TIFF structure itself |
 | **HEIF/HEIC** | EXIF item in ISOBMFF container | No 64 KB limit | Full EXIF; iPhone default since iOS 11 |
 | **DNG** | TIFF-based structure | No practical limit | Full EXIF + extensive DNG-specific tags |
-| **PNG** | `eXIf` chunk (PNG 1.5+) | No 64 KB limit | Adoption growing |
+| **PNG** | `eXIf` chunk (PNG Extensions, 2017) | No 64 KB limit | Adoption growing |
 | **WebP** | EXIF chunk in RIFF container | No 64 KB limit | Read-only in ImageIO |
 | **AVIF** | EXIF item in ISOBMFF container | No 64 KB limit | Similar to HEIF |
 | **GIF** | Not supported | — | No EXIF capability |
@@ -158,7 +158,7 @@ all camera settings, exposure data, timestamps, lens info, and processing tags.
 | 0x829d | FNumber | RATIONAL | 1 | F-stop (e.g., 2.8) |
 | 0x8822 | ExposureProgram | SHORT | 1 | 0=not defined, 1=manual, 2=normal program, 3=aperture priority, 4=shutter priority, 5=creative (slow program), 6=action (high-speed), 7=portrait, 8=landscape |
 | 0x8827 | ISOSpeedRatings | SHORT | Any | ISO sensitivity value(s) |
-| 0x8830 | SensitivityType | SHORT | 1 | Which ISO 12232 parameter: 1=SOS, 2=REI, 3=SOS+REI, 4=ISO Speed, 5=SOS+ISO, 6=REI+ISO, 7=all *(v2.3+)* |
+| 0x8830 | SensitivityType | SHORT | 1 | Which ISO 12232 parameter: 0=Unknown, 1=SOS, 2=REI, 3=SOS+REI, 4=ISO Speed, 5=SOS+ISO, 6=REI+ISO, 7=all *(v2.3+)* |
 | 0x8831 | StandardOutputSensitivity | LONG | 1 | SOS value *(v2.3+)* |
 | 0x8832 | RecommendedExposureIndex | LONG | 1 | REI value *(v2.3+)* |
 | 0x8833 | ISOSpeed | LONG | 1 | ISO speed value *(v2.3+)* |

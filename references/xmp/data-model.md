@@ -186,8 +186,9 @@ Key points:
 An XMP packet must conform to the well-formedness requirements of the XML
 specification, with these exceptions and additions:
 
-- No XML declaration (`<?xml version="1.0"?>`) at the start — the packet
-  header (`<?xpacket ...?>`) serves this role
+- The XML declaration (`<?xml version="1.0"?>`) is optional within an XMP
+  packet — the `<?xpacket ...?>` header serves a different purpose (packet
+  identification and scanning, not XML version declaration)
 - The XMP packet must be valid RDF as well as valid XML
 - Different packets in the same file may use different character encodings
 - Packets must not nest inside each other

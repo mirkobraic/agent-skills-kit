@@ -28,7 +28,7 @@ specification uses ISO 2022 escape sequences in Dataset 1:90
 | Tool | No CodedCharacterSet | With CodedCharacterSet |
 |------|---------------------|----------------------|
 | **Apple ImageIO** | Assumes UTF-8 | Ignores CodedCharacterSet; still assumes UTF-8 |
-| **ExifTool** | Assumes Windows Latin-1 (cp1252) | Respects the declared encoding |
+| **ExifTool** | Assumes Latin-1 (ISO 8859-1) | Respects the declared encoding |
 | **Adobe Lightroom** | Checks heuristically | Respects CodedCharacterSet |
 | **Adobe Photoshop** | Writes UTF-8 with ESC sequence | Respects CodedCharacterSet |
 | **Many older tools** | Write Latin-1 or platform-default | Do not write CodedCharacterSet |
@@ -597,8 +597,8 @@ func parseXMPGPS(_ xmpString: String) -> Double? {
 
 | Metadata | Preserved | Notes |
 |----------|----------|-------|
-| EXIF | **Lost** | PNG does not support EXIF natively (some tools embed in iTXt) |
-| GPS | **Lost** | No standard GPS storage in PNG |
+| EXIF | **Depends** | PNG supports EXIF via the eXIf chunk (2017 extension); support varies by tool |
+| GPS | **Depends** | Available if EXIF is preserved via eXIf chunk; not all tools support this |
 | XMP | Yes | Embedded in PNG iTXt chunk |
 | IPTC IIM | **Lost** | PNG does not support IPTC IIM |
 | ICC Profile | Yes | Embedded in PNG iCCP chunk |
@@ -607,7 +607,7 @@ func parseXMPGPS(_ xmpString: String) -> Double? {
 
 | Metadata | Preserved | Notes |
 |----------|----------|-------|
-| All metadata | **Lost** | GIF has no standard metadata storage |
+| All metadata | **Lost** | GIF has no widely-supported metadata storage (XMP is specified but rarely used) |
 | ICC Profile | **Lost** | GIF does not support ICC profiles |
 | Color depth | Reduced | GIF is limited to 256 colors |
 

@@ -269,13 +269,13 @@ Do not use interchangeably.
 | UIImage Orientation | UIImage Raw Value | EXIF Value | Transform |
 |--------------------|-------------------|------------|-----------|
 | `.up` | 0 | 1 | Normal |
-| `.upMirrored` | 1 | 2 | Horizontal flip |
-| `.down` | 2 | 3 | 180° |
-| `.downMirrored` | 3 | 4 | Vertical flip |
-| `.leftMirrored` | 4 | 5 | Transpose |
-| `.right` | 5 | 6 | 90° CW |
-| `.rightMirrored` | 6 | 7 | Transverse |
-| `.left` | 7 | 8 | 90° CCW |
+| `.upMirrored` | 4 | 2 | Horizontal flip |
+| `.down` | 1 | 3 | 180° |
+| `.downMirrored` | 5 | 4 | Vertical flip |
+| `.leftMirrored` | 6 | 5 | Transpose |
+| `.right` | 3 | 6 | 90° CW |
+| `.rightMirrored` | 7 | 7 | Transverse |
+| `.left` | 2 | 8 | 90° CCW |
 
 See `../imageio/pitfalls.md` for the full orientation confusion breakdown.
 
@@ -311,7 +311,7 @@ XMP namespaces cover EXIF content:
 |-----------------|---------------|--------|-------|
 | `kCGImageMetadataNamespaceExif` | `http://ns.adobe.com/exif/1.0/` | `exif` | Core Exif IFD tags |
 | `kCGImageMetadataNamespaceExifAux` | `http://ns.adobe.com/exif/1.0/aux/` | `aux` | Auxiliary lens/camera data |
-| `kCGImageMetadataNamespaceExifEX` | `http://cipa.jp/exif/1.0/` | `exifEX` | EXIF 2.31+ extension tags |
+| `kCGImageMetadataNamespaceExifEX` | `http://cipa.jp/exif/1.0/` | `exifEX` | EXIF 2.3+ extension tags |
 | `kCGImageMetadataNamespaceTIFF` | `http://ns.adobe.com/tiff/1.0/` | `tiff` | IFD0 tags (Make, Model, etc.) |
 
 All four are automatically registered by Apple — no manual registration needed.

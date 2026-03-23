@@ -3,7 +3,7 @@
 PNG (Portable Network Graphics) is a lossless raster image format defined by
 ISO/IEC 15948 and W3C Recommendation (Fourth Edition). It uses a chunk-based
 structure that supports text metadata, ICC profiles, XMP (via iTXt), and
-(since the PNG 1.5 extensions) native EXIF data via the eXIf chunk.
+(since the PNG Extensions specification, 2017) native EXIF data via the eXIf chunk.
 
 PNG does not natively support IPTC IIM. The primary metadata path for PNG is
 **XMP via iTXt chunks** and **ICC via iCCP chunks**.
@@ -217,8 +217,8 @@ takes precedence.
 
 ### eXIf -- EXIF Data
 
-Registered as a PNG extension chunk in 2017 (PNG Extensions 1.5.0, ratified
-by the PNG Development Group). Provides native EXIF embedding.
+Registered as a PNG extension chunk in 2017 (ratified by the PNG Development
+Group). Provides native EXIF embedding.
 
 ```
 eXIf chunk data = raw EXIF/TIFF structure (no JPEG preamble)
@@ -382,7 +382,7 @@ editor reorders chunks.
 
 | Standard   | Supported | Mechanism                        | Notes                           |
 |------------|-----------|----------------------------------|---------------------------------|
-| **EXIF**   | Limited   | eXIf chunk (PNG 1.5+, 2017)     | Not universally supported yet   |
+| **EXIF**   | Limited   | eXIf chunk (PNG Extensions, 2017) | Not universally supported yet   |
 | **XMP**    | Yes       | iTXt chunk (`XML:com.adobe.xmp`)| **Primary metadata path** for PNG |
 | **IPTC IIM** | No     | --                                | Use XMP `Iptc4xmpCore` instead  |
 | **ICC**    | Yes       | iCCP chunk (zlib-compressed)     | Full ICC profile support        |

@@ -115,8 +115,8 @@ See [`imageio-mapping.md`](imageio-mapping.md#xmp-mapping-for-tiff-tags).
 | Date | Event |
 |------|-------|
 | 1986 | TIFF 1.0 -- Aldus Corporation (with Microsoft) |
-| 1988 | TIFF 5.0 -- added palette color, LZW, tiling |
-| 1992 | TIFF 6.0 -- final Aldus revision; added CMYK, YCbCr, JPEG-in-TIFF |
+| 1988 | TIFF 5.0 -- added palette color, LZW |
+| 1992 | TIFF 6.0 -- final Aldus revision; added tiling, CMYK, YCbCr, JPEG-in-TIFF |
 | 1994 | Adobe acquires Aldus and TIFF specification |
 | 2001 | TIFF/EP (ISO 12234-2) -- electronic photography extension |
 | 1998 | TIFF/IT (ISO 12639) -- image technology for prepress (revised 2004) |

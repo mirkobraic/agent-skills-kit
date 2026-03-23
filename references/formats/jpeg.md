@@ -141,12 +141,12 @@ identifier string.
 | Identifier | 29    | `"http://ns.adobe.com/xap/1.0/\0"` (null-terminated) |
 | XMP Packet | N     | UTF-8 encoded RDF/XML                               |
 
-**Maximum payload:** ~65,504 bytes (65,535 minus 2-byte length field minus
-29-byte identifier). XMP packets exceeding this require Extended XMP.
+**Maximum payload:** ~65,502 bytes (65,535 minus 2-byte length field minus
+29-byte identifier minus 2 bytes overhead). XMP packets exceeding this require Extended XMP.
 
 ### APP1 -- Extended XMP
 
-When the XMP packet exceeds ~65,502 bytes, the XMP specification (Part 3:
+When the XMP packet exceeds the ~65,502 byte limit, the XMP specification (Part 3:
 Storage in Files) defines a splitting mechanism:
 
 1. **StandardXMP** -- The main APP1 segment contains a trimmed XMP packet that
@@ -154,7 +154,7 @@ Storage in Files) defines a splitting mechanism:
    with a 32-character uppercase hex GUID (MD5 of the full extended portion).
 
 2. **ExtendedXMP** -- Additional APP1 segments use the identifier
-   `"http://ns.adobe.com/xmp/extension/\0"` (35 bytes) followed by:
+   `"http://ns.adobe.com/xmp/extension/\0"` (35 bytes: 34 characters + null terminator) followed by:
 
    | Field              | Bytes | Description                           |
    |--------------------|-------|---------------------------------------|
