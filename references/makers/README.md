@@ -1,6 +1,6 @@
 # Manufacturer MakerNote Dictionaries
 
-> Part of [iOS Image Metadata Skill](../../PLAN.md) > Supporting Reference
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
 
 Vendor-specific capture data embedded in the EXIF MakerNote tag (0x927C).
 Each camera manufacturer defines their own proprietary binary format inside

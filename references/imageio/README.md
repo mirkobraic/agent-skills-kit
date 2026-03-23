@@ -1,11 +1,13 @@
 # ImageIO Framework Reference
 
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
+
 Apple's ImageIO framework (`import ImageIO`) — the primary API for reading, writing,
 and manipulating image metadata on iOS, macOS, visionOS, and tvOS.
 
 ---
 
-## Index
+## File Index
 
 | File | Contents |
 |------|----------|

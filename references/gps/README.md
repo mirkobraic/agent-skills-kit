@@ -1,6 +1,6 @@
 # GPS IFD Reference
 
-> Part of [iOS Image Metadata Skill](../../PLAN.md)
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
 
 The GPS IFD (Image File Directory) stores geolocation and positioning metadata
 within the EXIF structure. It is pointed to by IFD0 tag `0x8825`

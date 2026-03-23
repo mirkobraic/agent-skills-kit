@@ -1,5 +1,7 @@
 # XMP — Extensible Metadata Platform
 
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
+
 Complete reference for the XMP metadata standard (ISO 16684-1). The files in
 this folder document the XMP standard itself — data model, namespaces,
 embedding in file formats, and known pitfalls. All Apple ImageIO integration
@@ -89,7 +91,7 @@ WebP, AVIF, and many other formats.
 
 ---
 
-## Reference Files
+## File Index
 
 ### XMP Standard
 

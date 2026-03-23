@@ -1,5 +1,7 @@
 # Interoperability — Cross-Standard Sync & Mapping
 
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
+
 Cross-standard synchronization, field mapping, conflict resolution, and
 metadata preservation across EXIF, IPTC IIM, and XMP. This section covers
 problems that arise when the same metadata field exists in multiple standards
@@ -8,7 +10,7 @@ the resulting conflicts.
 
 ---
 
-## Index
+## File Index
 
 | File | Contents |
 |------|----------|
@@ -80,7 +82,7 @@ Convert through `CGImagePropertyOrientation` instead.
 
 ---
 
-## Cross-References to Other Sections
+## Cross-References
 
 | Topic | Location | Relevance |
 |-------|----------|-----------|
@@ -90,7 +92,7 @@ Convert through `CGImagePropertyOrientation` instead.
 | CGImageDestination write behavior | [../imageio/cgimagedestination.md](../imageio/cgimagedestination.md) | Merge vs replace, option keys, sync tables |
 | ImageIO pitfalls | [../imageio/pitfalls.md](../imageio/pitfalls.md) | UIImage loss, GPS convention, threading, caching |
 | EXIF orientation | [../exif/orientation.md](../exif/orientation.md) | EXIF orientation specification, iPhone defaults |
-| IPTC standard overview | [../iptc/](../iptc/) | IPTC IIM and Core/Extension schemas |
+| IPTC standard overview | [../iptc/README.md](../iptc/README.md) | IPTC IIM and Core/Extension schemas |
 
 ---
 

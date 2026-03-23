@@ -1,6 +1,6 @@
 # TIFF IFD Reference
 
-> Part of the [iOS Image Metadata Skill](../../PLAN.md)
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
 
 TIFF (Tagged Image File Format) metadata as exposed by Apple's ImageIO
 framework through `kCGImagePropertyTIFFDictionary`. TIFF is both a standalone
@@ -140,4 +140,4 @@ Extensions are handled through private tags and supplementary specifications
   `kCGImageProperty*` constant catalog for all dictionaries
 - [`../imageio/pitfalls.md`](../imageio/pitfalls.md) -- UIImage metadata loss,
   orientation confusion across Apple APIs
-- [`../iptc/`](../iptc/) -- IPTC Photo Metadata (IIM + Core + Extension)
+- [`../iptc/README.md`](../iptc/README.md) -- IPTC Photo Metadata (IIM + Core + Extension)

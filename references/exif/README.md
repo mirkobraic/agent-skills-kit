@@ -1,5 +1,7 @@
 # EXIF — Exchangeable Image File Format
 
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
+
 Complete reference for the EXIF metadata standard (CIPA DC-008). The files in
 this folder document the EXIF standard itself — binary format, tag definitions,
 XMP mappings, and known pitfalls. All Apple ImageIO integration details are
@@ -64,7 +66,7 @@ directly inside image files.
 
 ---
 
-## Reference Files
+## File Index
 
 ### EXIF Standard
 

@@ -1,5 +1,7 @@
 # Format-Specific Image Metadata
 
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
+
 Reference documentation for image file formats supported by Apple's ImageIO
 framework, focused on their container structure, metadata embedding mechanisms,
 and format-specific ImageIO property keys.

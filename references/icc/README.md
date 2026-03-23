@@ -1,5 +1,7 @@
 # ICC Color Profiles
 
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
+
 ICC color profile reference for iOS/macOS image metadata workflows. Covers the
 ICC specification, common profiles, per-format embedding, Apple ImageIO
 integration, and practical pitfalls.

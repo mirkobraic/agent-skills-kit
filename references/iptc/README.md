@@ -1,5 +1,7 @@
 # IPTC Photo Metadata Standard
 
+> Part of [iOS Image Metadata Skill](../../SKILL.md) · [References Index](../README.md)
+
 IPTC Photo Metadata Standard (Core 1.5, Extension 1.9). Editorial, descriptive,
 and rights metadata for images.
 
@@ -13,7 +15,7 @@ and rights metadata for images.
 > (HEIF, WebP, AVIF, PNG), IPTC metadata must be written via XMP using the
 > `Iptc4xmpCore` and `Iptc4xmpExt` namespaces.
 
-## Files
+## File Index
 
 | File | Contents |
 |------|----------|
