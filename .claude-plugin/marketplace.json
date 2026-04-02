@@ -1,20 +1,15 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "ios-image-metadata",
-  "version": "1.0.0",
-  "description": "Reference skill for image metadata work on iOS/macOS. Covers ImageIO APIs, EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation mapping, metadata preservation, and interoperability across metadata standards and image formats.",
+  "name": "agent-skills-kit",
+  "description": "Collection of Claude Code skills for software development.",
   "owner": {
     "name": "mirkobraic"
   },
   "plugins": [
     {
-      "name": "ios-image-metadata-skill",
-      "version": "1.0.0",
-      "description": "Reference skill for image metadata work on iOS/macOS. Covers ImageIO APIs (CGImageSource, CGImageDestination, CGImageMetadata), EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation mapping, metadata preservation, and interoperability across metadata standards and image formats.",
-      "source": ".",
-      "author": {
-        "name": "mirkobraic"
-      },
+      "name": "ios-image-metadata",
+      "description": "Reference skill for image metadata work on iOS/macOS. Covers ImageIO APIs, EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation mapping, metadata preservation, and interoperability across metadata standards and image formats.",
+      "source": "./skills/ios-image-metadata",
       "category": "development"
     }
   ]

@@ -1,9 +1,9 @@
 ---
-name: ios-image-metadata-skill
+name: ios-image-metadata
 description: Use when tasks involve ImageIO metadata work on iOS/macOS, including EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation behavior, metadata preservation, and interop mismatches across standards.
 ---
 
-# iOS Image Metadata Skill
+# iOS Image Metadata
 
 ## Use For
 

@@ -1,0 +1,8 @@
+{
+  "name": "ios-image-metadata",
+  "description": "Reference skill for image metadata work on iOS/macOS. Covers ImageIO APIs, EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation mapping, metadata preservation, and interoperability across metadata standards and image formats.",
+  "version": "1.0.0",
+  "author": {
+    "name": "mirkobraic"
+  }
+}

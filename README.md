@@ -1,21 +1,19 @@
-# iOS Image Metadata Skill
+# Agent Skills
 
-Reference-first skill repository for image metadata work on Apple platforms.
-It covers ImageIO APIs and metadata standards used in real iOS/macOS pipelines:
-EXIF, XMP, IPTC, GPS, TIFF, ICC, interoperability behavior, and format-specific
-constraints.
+Collection of agent skills for personal software development.
 
-## Start Here
+## Skills
 
-- `SKILL.md` — primary skill entry point and quick routing table.
-- `references/README.md` — central index of all reference folders.
-- `PLAN.md` — project roadmap and scope notes.
+- **[ios-image-metadata](skills/ios-image-metadata/SKILL.md)** — Reference skill for image metadata work on iOS/macOS. Covers ImageIO APIs, EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation mapping, and interoperability across metadata standards and image formats.
 
-## Repository Layout
+## Structure
 
-- `references/imageio/` — ImageIO API surface, property keys, formats, pitfalls
-- `references/exif/`, `references/xmp/`, `references/iptc/`, `references/gps/`, `references/tiff/`, `references/icc/` — standard-specific deep dives
-- `references/interoperability/` — cross-standard reconciliation and orientation mapping
-- `references/formats/` — container/encoding behavior by format
-- `references/makers/` — vendor MakerNote dictionaries
-- `scripts/iptc_metadata.py` — ExifTool-based IPTC/XMP utility
+```
+.claude-plugin/
+  marketplace.json        — marketplace catalog
+skills/
+  <skill-name>/
+    .claude-plugin/
+      plugin.json         — plugin manifest (version lives here)
+    SKILL.md              — skill entry point
+```
