@@ -75,7 +75,7 @@ directly inside image files.
 | [`technical-structure.md`](technical-structure.md) | Binary format: APP1 layout, TIFF header, IFD entry format, data types, byte order, complete tag tables for every IFD (IFD0, Exif SubIFD, GPS, Interoperability, IFD1), format embedding, MPF |
 | [`tag-reference.md`](tag-reference.md) | Tag semantics by category: all enum values decoded, Flash bitfield, DateTime triplet relationships, Composite Image, Environmental tags, EXIF 3.0, UserComment charset |
 | [`xmp-mapping.md`](xmp-mapping.md) | Standard EXIF↔XMP mapping: `exif:`, `exifEX:`, `aux:`, `tiff:` namespaces, complete tag→XMP path tables, binary vs XMP format differences |
-| [`orientation.md`](orientation.md) | Orientation values 1–8, row/column semantics, display transforms, visual reference, common camera values |
+| [`../interoperability/orientation-mapping.md`](../interoperability/orientation-mapping.md) | Orientation values 1–8, EXIF↔ImageIO↔UIImage mapping, display transforms, visual reference |
 | [`makernote.md`](makernote.md) | MakerNote characteristics, offset fragility, vendor formats (Canon, Nikon, Apple, Sony, etc.), GPS stripping caveat, decoder libraries |
 | [`pitfalls.md`](pitfalls.md) | Standard-level pitfalls: timezone ambiguity, MakerNote fragility, 64 KB limit, orientation inconsistency, ColorSpace ambiguity, privacy risks |
 

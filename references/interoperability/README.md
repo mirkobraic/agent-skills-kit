@@ -91,7 +91,7 @@ Convert through `CGImagePropertyOrientation` instead.
 | XMP bridge functions | [../imageio/cgimage-metadata.md](../imageio/cgimage-metadata.md) | Bridge function details, langAlt bug, path syntax |
 | CGImageDestination write behavior | [../imageio/cgimagedestination.md](../imageio/cgimagedestination.md) | Merge vs replace, option keys, sync tables |
 | ImageIO pitfalls | [../imageio/pitfalls.md](../imageio/pitfalls.md) | UIImage loss, GPS convention, threading, caching |
-| EXIF orientation | [../exif/orientation.md](../exif/orientation.md) | EXIF orientation specification, iPhone defaults |
+| EXIF orientation | [../exif/imageio-mapping.md](../exif/imageio-mapping.md#orientation-in-imageio) | EXIF orientation values, ImageIO constants, iPhone defaults |
 | IPTC standard overview | [../iptc/README.md](../iptc/README.md) | IPTC IIM and Core/Extension schemas |
 
 ---

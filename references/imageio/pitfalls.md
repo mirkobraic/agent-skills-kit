@@ -70,6 +70,12 @@ Same values 1–8, same meaning. Used with `kCGImageSourceCreateThumbnailWithTra
 > When creating thumbnails, set `kCGImageSourceCreateThumbnailWithTransform: true`
 > to get correctly oriented output without manual rotation.
 
+### Orientation Pitfalls
+
+- **Duplication:** Orientation exists in IFD0 (tag 0x0112) and may be duplicated at other levels (XMP `tiff:Orientation`, thumbnail IFD1) by editing software. Ensure all copies stay in sync when editing.
+- **Pixel data vs display:** The orientation tag does **not** change stored pixels — it tells viewers how to transform on display. Some software "bakes in" the rotation (rewrites pixels) and resets orientation to 1. After such a round-trip the tag is gone.
+- **Thumbnail mismatch:** The embedded thumbnail in IFD1 may have a different orientation than the main image if software only updated one of them.
+
 ---
 
 ## GPS Stripping Does Not Remove MakerNote Location Data

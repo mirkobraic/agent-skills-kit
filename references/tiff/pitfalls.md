@@ -451,7 +451,7 @@ in other reference sections:
 
 ```
 Orientation Duplication
-  +-- See also: ../exif/orientation.md (values 1-8)
+  +-- See also: ../interoperability/orientation-mapping.md (values 1-8)
   +-- See also: ../imageio/pitfalls.md (UIImage metadata loss)
 
 DateTime No Timezone

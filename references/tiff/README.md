@@ -132,8 +132,8 @@ Extensions are handled through private tags and supplementary specifications
 
 - [`../exif/technical-structure.md`](../exif/technical-structure.md) -- Full
   IFD binary format, data types, all IFD0/Exif SubIFD/GPS/IFD1 tag tables
-- [`../exif/orientation.md`](../exif/orientation.md) -- Orientation values 1-8,
-  visual diagrams, common camera defaults
+- [`../interoperability/orientation-mapping.md`](../interoperability/orientation-mapping.md) -- Orientation values 1-8,
+  visual diagrams, EXIF↔ImageIO↔UIImage mapping
 - [`../exif/pitfalls.md`](../exif/pitfalls.md) -- EXIF-specific pitfalls
   including DateTime timezone and MakerNote fragility
 - [`../imageio/property-keys.md`](../imageio/property-keys.md) -- Complete

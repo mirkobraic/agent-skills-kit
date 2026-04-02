@@ -246,7 +246,7 @@ causes when writing.
 
 For the full orientation reference including visual diagrams and
 CGImagePropertyOrientation vs UIImage.Orientation mapping, see
-[`../exif/orientation.md`](../exif/orientation.md) and
+[`../interoperability/orientation-mapping.md`](../interoperability/orientation-mapping.md) and
 [`imageio-mapping.md`](imageio-mapping.md#orientation-duplication).
 
 ### XResolution

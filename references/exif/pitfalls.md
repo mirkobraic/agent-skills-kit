@@ -57,7 +57,7 @@ display but does NOT modify the pixels themselves. Issues arise when:
 - The thumbnail has different orientation than the main image
 - Multiple consumers interpret orientation differently
 
-See [`orientation.md`](orientation.md) for the full value table.
+See [`../interoperability/orientation-mapping.md`](../interoperability/orientation-mapping.md) for the full value table.
 
 ---
 

@@ -34,7 +34,7 @@ description: Use when tasks involve ImageIO metadata work on iOS/macOS, includin
 | What formats support this metadata? | Format matrix | `references/imageio/supported-formats.md`, `references/formats/README.md` |
 | How do I write/update metadata safely? | Write behavior + pitfalls | `references/imageio/cgimagedestination.md`, `references/imageio/pitfalls.md` |
 | Why are XMP and EXIF/IPTC values inconsistent? | Interop reconciliation | `references/interoperability/overlapping-fields.md`, `references/interoperability/mwg-guidelines.md`, `references/interoperability/imageio-behavior.md` |
-| Orientation is rotated/mirrored incorrectly | Orientation mapping | `references/interoperability/orientation-mapping.md`, `references/exif/orientation.md` |
+| Orientation is rotated/mirrored incorrectly | Orientation mapping | `references/interoperability/orientation-mapping.md`, `references/exif/imageio-mapping.md` |
 | GPS coordinates are wrong | GPS conventions | `references/gps/README.md`, `references/gps/coordinate-conventions.md` |
 | IPTC in HEIC/PNG/WebP/AVIF | IPTC + XMP path | `references/iptc/README.md`, `references/xmp/README.md`, `references/xmp/imageio-integration.md` |
 | Color profile or Display P3 issues | ICC reference | `references/icc/README.md`, `references/icc/common-profiles.md` |

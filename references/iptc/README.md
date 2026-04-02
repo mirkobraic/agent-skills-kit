@@ -19,11 +19,9 @@ and rights metadata for images.
 
 | File | Contents |
 |------|----------|
-| [standard-overview.md](standard-overview.md) | Schema overview, Core vs Extension, data types, TechReference, XMP namespaces |
-| [user-guide.md](user-guide.md) | Minimal fields, AI metadata, accessibility, Digital Source Type, preservation |
+| [standard-overview.md](standard-overview.md) | Schema overview, Core vs Extension, XMP namespaces, minimal fields, AI metadata, accessibility, preservation |
 | [tooling.md](tooling.md) | ExifTool CLI wrapper documentation |
-| [iptc-pmd-techreference_2025.1.json](iptc-pmd-techreference_2025.1.json) | Machine-readable spec (JSON) |
-| [iptc-pmd-techreference_2025.1.yml](iptc-pmd-techreference_2025.1.yml) | Machine-readable spec (YAML) |
+| [property-reference.md](property-reference.md) | All 66 properties + 19 structures: XMP IDs, IIM mappings, types, cardinality |
 
 ## Planned Additional Content
 

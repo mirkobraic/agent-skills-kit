@@ -582,8 +582,8 @@ func composeOrientation(
 
 - [../imageio/pitfalls.md](../imageio/pitfalls.md) — Orientation confusion
   pitfall, UIImage metadata loss
-- [../exif/orientation.md](../exif/orientation.md) — EXIF orientation
-  specification details
+- [../exif/imageio-mapping.md](../exif/imageio-mapping.md#orientation-in-imageio) — EXIF orientation
+  in ImageIO
 - [overlapping-fields.md](overlapping-fields.md) — Orientation as overlapping
   field (TIFF IFD0, top-level, XMP)
 - [pitfalls.md](pitfalls.md) — Orientation inconsistency across apps
