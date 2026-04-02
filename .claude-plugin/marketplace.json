@@ -8,8 +8,8 @@
   "plugins": [
     {
       "name": "ios-image-metadata",
-      "description": "Reference skill for image metadata work on iOS/macOS. Covers ImageIO APIs, EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation mapping, metadata preservation, and interoperability across metadata standards and image formats.",
-      "source": "./skills/ios-image-metadata",
+      "description": "Reference plugin for image metadata work on iOS/macOS. Covers ImageIO APIs, EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation mapping, metadata preservation, and interoperability across metadata standards and image formats.",
+      "source": "./plugins/ios-image-metadata",
       "category": "development"
     }
   ]

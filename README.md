@@ -1,19 +1,46 @@
-# Agent Skills
+# Agent Skills Kit
 
-Collection of agent skills for personal software development.
+Collection of Claude Code plugins for personal software development.
 
-## Skills
+## Plugins
 
-- **[ios-image-metadata](skills/ios-image-metadata/SKILL.md)** — Reference skill for image metadata work on iOS/macOS. Covers ImageIO APIs, EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation mapping, and interoperability across metadata standards and image formats.
+### ios-image-metadata
+
+Reference plugin for image metadata work on iOS/macOS. Contains 8 focused skills:
+
+| Skill | Description |
+|-------|-------------|
+| `imageio` | ImageIO APIs, property keys, format support matrices |
+| `exif` | EXIF tags, IFD structure, MakerNote fields |
+| `xmp` | XMP data model, namespaces, embedding |
+| `iptc` | IPTC IIM + Extension, editorial/rights metadata |
+| `gps` | GPS coordinates, sign/ref conventions |
+| `tiff` | TIFF IFD tags, container structure |
+| `icc` | ICC color profiles, Display P3 |
+| `metadata-sync` | Cross-standard reconciliation, orientation mapping |
 
 ## Structure
 
 ```
 .claude-plugin/
-  marketplace.json        — marketplace catalog
-skills/
-  <skill-name>/
+  marketplace.json              — marketplace catalog
+plugins/
+  <plugin-name>/
     .claude-plugin/
-      plugin.json         — plugin manifest (version lives here)
-    SKILL.md              — skill entry point
+      plugin.json               — plugin manifest
+    skills/
+      <skill-name>/
+        SKILL.md                — skill entry point
+        references/             — reference documentation
 ```
+
+## Usage
+
+Add this marketplace to Claude Code:
+
+```
+/plugin marketplace add <repo-url>
+/plugin install ios-image-metadata
+```
+
+Skills become available as `ios-image-metadata:<skill-name>` (e.g., `ios-image-metadata:exif`).
