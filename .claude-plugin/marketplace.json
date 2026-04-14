@@ -11,6 +11,12 @@
       "description": "Reference plugin for image metadata work on iOS/macOS. Covers ImageIO APIs, EXIF, XMP, IPTC, GPS, TIFF, ICC, orientation mapping, metadata preservation, and interoperability across metadata standards and image formats.",
       "source": "./plugins/ios-image-metadata",
       "category": "development"
+    },
+    {
+      "name": "ios-quick-start",
+      "description": "Scaffold a new iOS app project with a clean three-layer architecture (DomainLayer, DataLayer, ViewLayer) + Shared utilities as local SPM packages, Factory for dependency injection, and Navigator for SwiftUI navigation.",
+      "source": "./plugins/ios-quick-start",
+      "category": "development"
     }
   ]
 }

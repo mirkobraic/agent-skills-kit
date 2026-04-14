@@ -1,0 +1,9 @@
+{
+  "name": "ios-quick-start",
+  "description": "Scaffold a new iOS app project with a clean three-layer architecture (DomainLayer, DataLayer, ViewLayer) + Shared utilities as local SPM packages, Factory for dependency injection, and Navigator for SwiftUI navigation.",
+  "version": "1.0.0",
+  "author": {
+    "name": "mirkobraic"
+  },
+  "skills": "./skills/"
+}
